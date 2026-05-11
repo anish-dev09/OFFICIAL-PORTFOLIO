@@ -57,14 +57,6 @@
   --surface-color: #151f2b;
 }
 
-/* Hero name size */
-.hero h2 {
-  font-size: 4.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  --contrast-color: #ffffff;
-}
-
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -593,7 +585,7 @@ section,
 
 .hero h2 {
   margin: 0;
-  font-size: 64px;
+  font-size: clamp(2.75rem, 8vw, 8rem);
   font-weight: 700;
   text-shadow: 0 0 15px rgba(20, 157, 221, 0.3);
   letter-spacing: -2px;
@@ -627,10 +619,6 @@ section,
 }
 
 @media (max-width: 768px) {
-  .hero h2 {
-    font-size: 32px;
-  }
-
   .hero p {
     font-size: 20px;
   }
@@ -1014,6 +1002,92 @@ section,
 
 .portfolio .portfolio-content:hover img {
   transform: scale(1.1);
+}
+
+/* Portfolio overlay for current markup */
+.portfolio .project-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.portfolio .project-image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.portfolio .project-image-wrapper .portfolio-info {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  gap: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio .project-image-wrapper:hover .portfolio-info {
+  opacity: 1;
+}
+
+.portfolio .project-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio .portfolio-info .portfolio-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.portfolio .portfolio-info h4 {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.portfolio .portfolio-info p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+  max-height: 5.6em;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-links {
+  margin-top: auto;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio .portfolio-links a {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  color: #ffffff;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.portfolio .portfolio-links a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
 }
 
 /*--------------------------------------------------------------
