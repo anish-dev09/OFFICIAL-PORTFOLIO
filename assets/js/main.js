@@ -9,6 +9,18 @@
 (function() {
   "use strict";
 
+  // Always start at top on refresh/navigation
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+  window.addEventListener('pageshow', () => {
+    if (window.location.hash && window.location.hash !== '#hero') {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  });
+
   /**
    * Header toggle
    */
@@ -191,6 +203,9 @@
    */
   window.addEventListener('load', function(e) {
     if (window.location.hash) {
+      if (window.location.hash !== '#hero') {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
           let section = document.querySelector(window.location.hash);
@@ -201,6 +216,9 @@
           });
         }, 100);
       }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'auto' }));
     }
   });
 
