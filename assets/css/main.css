@@ -1091,6 +1091,227 @@ section,
 }
 
 /*--------------------------------------------------------------
+# ANISH X WORLD Section
+--------------------------------------------------------------*/
+.anish-world {
+  background-color: #f5f8fd;
+}
+
+.anish-world .aw-header {
+  background: #050d18;
+  color: #ffffff;
+  padding: 40px 0 20px;
+  margin-bottom: 30px;
+}
+
+.anish-world .aw-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.anish-world .aw-title h2 {
+  color: #ffffff;
+}
+
+.anish-world .aw-title h2:after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.anish-world .aw-subtitle {
+  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.anish-world .aw-subtitle span {
+  background: linear-gradient(90deg, #149ddd, #00d4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.anish-world .aw-mission {
+  max-width: 760px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.anish-world .aw-panel {
+  background: #ffffff;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 14px;
+  padding: 24px;
+  height: 100%;
+}
+
+.anish-world .aw-panel-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--heading-color);
+}
+
+.anish-world .aw-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.anish-world .aw-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: var(--default-color);
+}
+
+.anish-world .aw-list i {
+  color: var(--accent-color);
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.anish-world .aw-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.anish-world .aw-stat {
+  background: #f9fbff;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+}
+
+.anish-world .aw-stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.anish-world .aw-stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--transparent-text-dark);
+}
+
+.anish-world .aw-videos {
+  margin-top: 40px;
+}
+
+.anish-world .aw-roadmap {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.anish-world .aw-pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.anish-world .aw-pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  background: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.anish-world .aw-section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--heading-color);
+}
+
+.anish-world .aw-video-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.anish-world .aw-video-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.anish-world .aw-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 157, 221, 0.85);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.anish-world .aw-video-card:hover .aw-video-overlay {
+  opacity: 1;
+}
+
+.anish-world .aw-video-card:hover img {
+  transform: scale(1.05);
+}
+
+.anish-world .aw-video-overlay h4 {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.anish-world .aw-video-overlay i {
+  font-size: 28px;
+}
+
+.anish-world .aw-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #149ddd;
+  color: #ffffff;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-top: 30px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.anish-world .aw-cta:hover {
+  background: #0f86c0;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .anish-world .aw-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .anish-world .aw-header {
+    padding: 30px 0 15px;
+  }
+}
+
+/*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
